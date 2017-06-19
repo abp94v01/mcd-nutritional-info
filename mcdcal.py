@@ -1,5 +1,4 @@
-f = open("drinksmenu-cal.csv","r") # opens mcd nutritional info menu as read only
-menu = f.read() # reads it in assigned to menu
+menu = open("drinksmenu-cal.csv").read() # opens and read mcd nutritional info
 
 rows = menu.split('\n')
 final_data =[]
@@ -50,8 +49,26 @@ for cal in cal_int:
     else:
         low_cal.append(cal)
 
-# print(high_cal)
-print(low_cal)
+high_cal_single = []
+for hc in high_cal:
+    if hc in high_cal_single:
+        pass # don't add cal if already in the list - avoids repeat cals
+    else:
+        high_cal_single.append(hc)
+
+low_cal_single = []
+for lc in low_cal:
+    if lc in low_cal_single:
+        pass # don't add cal if already in the list - avoids repeat cals
+    else:
+        low_cal_single.append(lc)
+
+
+
+print("Range of High Calorie Drinks", '\n', sorted(high_cal_single),'\n')
+print("Range of Low Calorie Drinks", '\n', sorted(low_cal_single),'\n')
+
+
 
 items = []
 for i in final_data:
