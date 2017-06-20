@@ -77,13 +77,23 @@ for i in final_data:
 item_slice = items[1:len(items)-1]
 
 item_cal = dict(zip(item_slice, cal_int)) # pairs items and calories in a dictionary
-# print(item_cal)
+# print(item_slice)
 
-hlatte = item_cal["Hazelnut Latte (Large)"]
-print("A Large Hazelnut Latte has",hlatte, "calories",'\n')
+# hlatte = item_cal["Hazelnut Latte (Large)"]
+# print("A Large Hazelnut Latte has",hlatte, "calories",'\n')
 
 low_items = [k for k,v in item_cal.items() if v <= 150] # these items are less than 150 calories each
 print("LOW CALORIE DRINKS",*low_items, sep='\n') # seperates each item per line
 
+high_items = [k for k,v in item_cal.items() if v > 150] 
+print('\n',"HIGH CALORIE DRINKS",*high_items, sep='\n') # seperates each item per line
+
+print('\n',"USE calories(name of drink in quotes) TO GET IT'S CALORIES")  
+def calories(drink_name, drinks_list = item_cal):  
+    output = (drinks_list[drink_name])
+    message = print("A",drink_name,"has", output, "calories!") 
+    return(message)
+    
+    
 
 
