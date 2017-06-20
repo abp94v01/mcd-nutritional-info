@@ -15,7 +15,7 @@ for r in final_data:
 
 #print(categories[0:5])
 
-cat_slice = categories[1:len(categories)-1] # removes the category header
+cat_slice = categories[1:len(categories)] # removes the category header
 
 # code to count the number of categories in a list using a dictionary
 category_counts = {}
@@ -32,7 +32,7 @@ for r in final_data:
     final_datas = r[2]
     calories.append(final_datas)
 
-cal_slice = calories[1:len(calories)-1]
+cal_slice = calories[1:len(calories)]
 
 # print(cal_slice)
 
@@ -74,7 +74,7 @@ items = []
 for i in final_data:
     item = i[1]
     items.append(item)
-item_slice = items[1:len(items)-1]
+item_slice = items[1:len(items)]
 
 item_cal = dict(zip(item_slice, cal_int)) # pairs items and calories in a dictionary
 # print(item_slice)
